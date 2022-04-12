@@ -31,7 +31,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         nextButton.isHidden = true
         slides = [
-            OnboardingSlide(title: "Welcome", desc: "<App Name> is an app designed for programmers to stay productive.", image: #imageLiteral(resourceName: "onboarding-1")),
+            OnboardingSlide(title: "Welcome", desc: "TaskIt is an app designed for programmers to stay productive.", image: #imageLiteral(resourceName: "onboarding-1")),
             OnboardingSlide(title: "Task List", desc: "You can write as many tasks as you want and provide its details like difficulty and deadlines.", image: #imageLiteral(resourceName: "onboarding-2")),
             OnboardingSlide(title: "1-3-5 Rule", desc: "We recommend for you to complete 1 hard task, 3 medium task, and 5 easy tasks per day to stay productive without feeling burned out.", image: #imageLiteral(resourceName: "onboarding-3")),
             OnboardingSlide(title: "Timer", desc: "Use the timer feature to set your work time frame and we will remind you to take a break every few minutes.", image: #imageLiteral(resourceName: "onboarding-4")),
