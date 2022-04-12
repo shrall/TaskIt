@@ -57,6 +57,7 @@ class OneThreeFiveViewController: UIViewController {
         }
         self.present(otfVC, animated: true, completion: nil)
     }
+    
     func getAllItems(){
         do{
             tasks = try context.fetch(TaskItem.fetchRequest())

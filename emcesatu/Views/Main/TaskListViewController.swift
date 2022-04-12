@@ -74,6 +74,10 @@ class TaskListViewController: UIViewController{
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        taskSC.selectedSegmentIndex = 0
+        getAllItems(status: "unlisted")
+    }
 }
 extension TaskListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

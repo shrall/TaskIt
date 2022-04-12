@@ -53,7 +53,7 @@ class TaskDetailViewController: UIViewController {
         segmentedDescription.attributedText = pomodoroHelp
         taskTitle.text = task.name
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YY, MMM d"
+        dateFormatter.dateFormat = "d MMM, YYYY"
         taskDeadline.text = dateFormatter.string(from: (task.deadline ?? task.createdAt)!)
         taskDeadline.isHidden = !task.deadlineBool
         
@@ -102,22 +102,11 @@ class TaskDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func updateItem(task: TaskItem, newTask: TaskItem){
-        task.name = newTask.name
-        task.difficulty = newTask.difficulty
-        task.deadlineBool = newTask.deadlineBool
-        task.deadline = newTask.deadline
-        task.ruled = newTask.ruled
-        do{
-            try context.save()
-        }
-        catch{
-            
-        }
-    }
-    
     func didTapEdit(){
-        
+        let editVC = (storyboard?.instantiateViewController(withIdentifier:"editTaskVC")) as! EditTaskViewController
+        editVC.task = task
+        editVC.delegate = self
+        self.present(editVC, animated: true)
     }
     
     func didTapDelete(){
@@ -130,5 +119,15 @@ class TaskDetailViewController: UIViewController {
         }
         delegate?.onDelete()
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension TaskDetailViewController: EditTaskViewControllerDelegate{
+    func onUpdate() {
+        taskTitle.text = task.name
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM, YYYY"
+        taskDeadline.text = dateFormatter.string(from: (task.deadline ?? task.createdAt)!)
+        taskDeadline.isHidden = !task.deadlineBool
     }
 }

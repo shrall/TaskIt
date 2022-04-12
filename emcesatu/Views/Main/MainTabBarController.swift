@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
-        let result = dateFormatter.string(from: UserDefaults.standard.date(forKey: "appDate")!)
+        let result = dateFormatter.string(from: UserDefaults.standard.date(forKey: "appDate") ?? Date())
         if(result != dateFormatter.string(from: Date())){
             UserDefaults.standard.set(date: Date(), forKey: "appDate")
             refreshAllTasks()

@@ -212,16 +212,16 @@
                                                     <rect key="frame" x="4" y="4" width="374" height="48.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KoX-hK-xvD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="245.5" height="48.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="275.5" height="48.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create TokoBayiFiv's Homepage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPs-o3-coI">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="245.5" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="275.5" height="23"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="23, January 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcn-Ub-ZZM">
-                                                                    <rect key="frame" x="0.0" y="27" width="245.5" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="27" width="275.5" height="21.5"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                                     <nil key="highlightedColor"/>
@@ -238,7 +238,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-X7-2YD">
-                                                            <rect key="frame" x="253.5" y="0.0" width="120.5" height="48.5"/>
+                                                            <rect key="frame" x="283.5" y="0.0" width="90.5" height="48.5"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.square" translatesAutoresizingMaskIntoConstraints="NO" id="h2b-Iu-Twq">
                                                                     <rect key="frame" x="0.0" y="0.0" width="22.5" height="48.5"/>
@@ -247,9 +247,9 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Z-HN-dzl">
-                                                                    <rect key="frame" x="30.5" y="0.0" width="90" height="48.5"/>
+                                                                    <rect key="frame" x="30.5" y="0.0" width="60" height="48.5"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="90" id="D8z-Qa-HtK"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="D8z-Qa-HtK"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                     <nil key="textColor"/>
@@ -992,9 +992,12 @@
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Add Task" id="xld-aD-wSb">
+                                    <navigationItem title="Edit Task" id="xld-aD-wSb">
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="wxH-oM-MC8">
                                             <color key="tintColor" red="0.41568624970000001" green="0.38823530080000002" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="saveButtonClicked:" destination="thf-Ku-Mw5" id="6sB-hE-xYc"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1003,6 +1006,9 @@
                                 <rect key="frame" x="16" y="141.5" width="382" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTFChanged:" destination="thf-Ku-Mw5" eventType="valueChanged" id="8hX-Oc-R2f"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cOY-t3-kjh">
                                 <rect key="frame" x="16" y="191.5" width="382" height="60.5"/>
@@ -1031,6 +1037,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="hardButtonClicked:" destination="thf-Ku-Mw5" eventType="touchUpInside" id="Mik-5I-B4k"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alC-ZA-wq2">
                                                 <rect key="frame" x="130" y="0.0" width="122" height="31"/>
@@ -1045,6 +1054,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="mediumButtonClicked:" destination="thf-Ku-Mw5" eventType="touchUpInside" id="9EM-gk-VPT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AR-BZ-Ifg">
                                                 <rect key="frame" x="260" y="0.0" width="122" height="31"/>
@@ -1059,6 +1071,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="easyButtonClicked:" destination="thf-Ku-Mw5" eventType="touchUpInside" id="vSz-S7-4oK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1095,6 +1110,9 @@
                                                 <rect key="frame" x="333" y="0.0" width="51" height="31"/>
                                                 <color key="tintColor" red="0.41568624970000001" green="0.38823530080000002" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="onTintColor" red="0.41568624970000001" green="0.38823530080000002" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <action selector="deadlineSwitch:" destination="thf-Ku-Mw5" eventType="valueChanged" id="3qD-2H-PCO"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                         <constraints>
@@ -1147,6 +1165,15 @@
                             <constraint firstItem="wW5-uo-rVA" firstAttribute="top" secondItem="FcZ-p1-0LS" secondAttribute="bottom" constant="24" id="zoX-ed-ljS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="a9e-gu-5MU" id="NJa-l6-0Ci"/>
+                        <outlet property="deadlineSwitch" destination="HAE-zh-YuX" id="awI-Bc-Ulp"/>
+                        <outlet property="easyButton" destination="2AR-BZ-Ifg" id="nER-GP-5e7"/>
+                        <outlet property="hardButton" destination="Rfw-Ng-OSP" id="7Zp-Sy-GUY"/>
+                        <outlet property="mediumButton" destination="alC-ZA-wq2" id="xSJ-Lh-GQA"/>
+                        <outlet property="nameTF" destination="8lm-uZ-bxg" id="ZhA-2x-6dv"/>
+                        <outlet property="saveButton" destination="wxH-oM-MC8" id="gwx-1t-9L9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6t-6t-vGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
