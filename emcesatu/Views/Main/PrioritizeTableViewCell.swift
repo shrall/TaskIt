@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol PrioritizeTaskViewControllerDelegate {
-    func onClose()
-}
-
 class PrioritizeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskName: UILabel!

@@ -5,11 +5,12 @@
         <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="deadlineBool" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="finishedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="ruled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="status" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TaskItem" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="TaskItem" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

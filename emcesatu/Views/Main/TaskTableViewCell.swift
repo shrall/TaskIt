@@ -21,7 +21,6 @@ class TaskTableViewCell: UITableViewCell {
     let mediumColor = UIColor(red: 251/255, green: 187/255, blue: 2/255, alpha: 1)
     let easyColor = UIColor(red: 16/255, green: 185/255, blue: 129/255, alpha: 1)
     
-    
     func setup(_ task:TaskItem){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY, MMM d"

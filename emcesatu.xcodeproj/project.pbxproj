@@ -24,6 +24,9 @@
 		1075FA4928047F34002545B3 /* PrioritizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075FA4828047F34002545B3 /* PrioritizeViewController.swift */; };
 		1075FA4B2804818E002545B3 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075FA4A2804818E002545B3 /* UserDefaults+Extension.swift */; };
 		1075FA4D28048D25002545B3 /* PrioritizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075FA4C28048D25002545B3 /* PrioritizeTableViewCell.swift */; };
+		1075FA5128054642002545B3 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075FA5028054642002545B3 /* TaskDetailViewController.swift */; };
+		1075FA5328055BA7002545B3 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075FA5228055BA7002545B3 /* NSMutableAttributedString+Extension.swift */; };
+		1075FA5528056763002545B3 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075FA5428056762002545B3 /* EditTaskViewController.swift */; };
 		10AF5093280094800094231D /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AF5092280094800094231D /* AddTaskViewController.swift */; };
 		10AF50952800A6C40094231D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AF50942800A6C40094231D /* UIButton+Extension.swift */; };
 		10AF509A280130500094231D /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10AF5098280130500094231D /* Data.xcdatamodeld */; };
@@ -54,6 +57,9 @@
 		1075FA4828047F34002545B3 /* PrioritizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritizeViewController.swift; sourceTree = "<group>"; };
 		1075FA4A2804818E002545B3 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		1075FA4C28048D25002545B3 /* PrioritizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritizeTableViewCell.swift; sourceTree = "<group>"; };
+		1075FA5028054642002545B3 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		1075FA5228055BA7002545B3 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		1075FA5428056762002545B3 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		10AF5092280094800094231D /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		10AF50942800A6C40094231D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		10AF5099280130500094231D /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				1075FA3828032DB1002545B3 /* UITableView+Extension.swift */,
 				1075FA3A28033FCC002545B3 /* UITableViewCell+Extension.swift */,
 				1075FA4A2804818E002545B3 /* UserDefaults+Extension.swift */,
+				1075FA5228055BA7002545B3 /* NSMutableAttributedString+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 				1075FA442804150B002545B3 /* OneThreeFiveTableViewCell.swift */,
 				1075FA4828047F34002545B3 /* PrioritizeViewController.swift */,
 				1075FA4C28048D25002545B3 /* PrioritizeTableViewCell.swift */,
+				1075FA5028054642002545B3 /* TaskDetailViewController.swift */,
+				1075FA5428056762002545B3 /* EditTaskViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -262,10 +271,13 @@
 				10311F9627FEF0ED002EEB99 /* SceneDelegate.swift in Sources */,
 				10AF50A028015AD40094231D /* TaskTableViewCell.swift in Sources */,
 				10F5020E28003571004836CE /* OneThreeFiveViewController.swift in Sources */,
+				1075FA5128054642002545B3 /* TaskDetailViewController.swift in Sources */,
 				10311FB127FEF6C6002EEB99 /* UIView+Extension.swift in Sources */,
 				1075FA4D28048D25002545B3 /* PrioritizeTableViewCell.swift in Sources */,
+				1075FA5328055BA7002545B3 /* NSMutableAttributedString+Extension.swift in Sources */,
 				10311FAF27FEF664002EEB99 /* OnboardingViewController.swift in Sources */,
 				1075FA4B2804818E002545B3 /* UserDefaults+Extension.swift in Sources */,
+				1075FA5528056763002545B3 /* EditTaskViewController.swift in Sources */,
 				10AF509A280130500094231D /* Data.xcdatamodeld in Sources */,
 				1075FA4328041213002545B3 /* TaskItem+CoreDataProperties.swift in Sources */,
 				1075FA452804150B002545B3 /* OneThreeFiveTableViewCell.swift in Sources */,

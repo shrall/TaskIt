@@ -46,6 +46,7 @@ class OnboardingViewController: UIViewController {
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
             UserDefaults.standard.hasOnboarded = true
+            UserDefaults.standard.set(date: Date(), forKey: "appDate")
             present(controller, animated: true, completion: nil)
         }
     }

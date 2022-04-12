@@ -8,6 +8,14 @@
 import Foundation
 
 extension UserDefaults {
+    func set(date: Date?, forKey key: String){
+        self.set(date, forKey: key)
+    }
+    
+    func date(forKey key: String) -> Date? {
+        return self.value(forKey: key) as? Date
+    }
+    
     private enum UserDefaultKeys: String {
         case hasOnboarded
     }

@@ -115,6 +115,19 @@ extension OneThreeFiveViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let taskDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "TaskDetailVC") as? TaskDetailViewController else { return }
+        switch indexPath.section {
+        case 0:
+            taskDetailVC.task = hardTasks[indexPath.row]
+        case 1:
+            taskDetailVC.task = mediumTasks[indexPath.row]
+        case 2:
+            taskDetailVC.task = easyTasks[indexPath.row]
+        default:
+            break
+        };
+        taskDetailVC.delegate = self
+        self.navigationController?.pushViewController(taskDetailVC, animated: true)
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UITableViewHeaderFooterView()
@@ -187,6 +200,14 @@ extension OneThreeFiveViewController: UITableViewDelegate, UITableViewDataSource
 }
 extension OneThreeFiveViewController: PrioritizeTaskViewControllerDelegate{
     func onClose() {
+        getAllItems()
+    }
+}
+extension OneThreeFiveViewController: TaskDetailViewControllerDelegate{
+    func onDelete() {
+        getAllItems()
+    }
+    func onFinished() {
         getAllItems()
     }
 }

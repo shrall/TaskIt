@@ -17,6 +17,7 @@ extension TaskItem {
     }
 
     @NSManaged public var createdAt: Date?
+    @NSManaged public var finishedAt: Date?
     @NSManaged public var deadline: Date?
     @NSManaged public var deadlineBool: Bool
     @NSManaged public var difficulty: Int16

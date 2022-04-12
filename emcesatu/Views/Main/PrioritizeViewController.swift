@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol PrioritizeTaskViewControllerDelegate {
+    func onClose()
+}
 
 class PrioritizeViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -51,6 +54,9 @@ class PrioritizeViewController: UIViewController {
             
         }
     }
+    @IBAction func doneClicked(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex
         {
@@ -82,7 +88,8 @@ class PrioritizeViewController: UIViewController {
         imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         let textLabel = UILabel()
         textLabel.text = diff
-        textLabel.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        textLabel.textAlignment = NSTextAlignment.center
+        textLabel.widthAnchor.constraint(equalToConstant: 110).isActive = true
         textLabel.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
         textLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 24)
         
@@ -108,7 +115,7 @@ class PrioritizeViewController: UIViewController {
         stackView.axis  = NSLayoutConstraint.Axis.horizontal
         stackView.distribution  = UIStackView.Distribution.fillProportionally
         stackView.alignment = UIStackView.Alignment.center
-        stackView.spacing = 16
+        stackView.spacing = 0
         
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(textLabel)
@@ -149,17 +156,15 @@ extension PrioritizeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        print(selectedRow)
-        print(diffInt)
-            if selectedRow >= diffInt {
-                let alertController = UIAlertController(title: "Oops", message:
-                                                            "You are limited to \(diffInt) selection(s)", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-                }))
-                self.present(alertController, animated: true, completion: nil)
-                
-                return nil
-            }
+        if selectedRow >= diffInt {
+            let alertController = UIAlertController(title: "Oops", message:
+                                                        "You are limited to \(diffInt) selection(s)", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+            }))
+            self.present(alertController, animated: true, completion: nil)
+            
+            return nil
+        }
         
         return indexPath
     }

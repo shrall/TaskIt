@@ -8,6 +8,7 @@
 import UIKit
 
 class TaskListViewController: UIViewController{
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let navbarTitle = UILabel()
@@ -73,30 +74,6 @@ class TaskListViewController: UIViewController{
         }
     }
     
-    func updateItem(task: TaskItem, newTask: TaskItem){
-        task.name = newTask.name
-        task.difficulty = newTask.difficulty
-        task.deadlineBool = newTask.deadlineBool
-        task.deadline = newTask.deadline
-        task.ruled = newTask.ruled
-        do{
-            try context.save()
-        }
-        catch{
-            
-        }
-    }
-    
-    func deleteItem(item: TaskItem){
-        context.delete(item)
-        do{
-            try context.save()
-        }
-        catch{
-            
-        }
-    }
-    
 }
 extension TaskListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,12 +88,26 @@ extension TaskListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        deleteItem(item: tasks[indexPath.row])
-        getAllItems(status: "unlisted")
+        guard let taskDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "TaskDetailVC") as? TaskDetailViewController else { return };
+        taskDetailVC.task = tasks[indexPath.row]
+        taskDetailVC.delegate = self
+        self.navigationController?.pushViewController(taskDetailVC, animated: true)
     }
 }
 extension TaskListViewController: AddTaskViewControllerDelegate{
     func onSave() {
+        taskSC.selectedSegmentIndex = 0
         getAllItems(status: "unlisted")
     }
+}
+extension TaskListViewController: TaskDetailViewControllerDelegate{
+    func onDelete() {
+        taskSC.selectedSegmentIndex = 0
+        getAllItems(status: "unlisted")
+    }
+    func onFinished() {
+        taskSC.selectedSegmentIndex = 1
+        getAllItems(status: "finished")
+    }
+    
 }

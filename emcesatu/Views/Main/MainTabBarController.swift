@@ -8,10 +8,22 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    private var tasks = [TaskItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let result = dateFormatter.string(from: UserDefaults.standard.date(forKey: "appDate")!)
+        if(result != dateFormatter.string(from: Date())){
+            UserDefaults.standard.set(date: Date(), forKey: "appDate")
+            refreshAllTasks()
+        }
+        
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
         leftSwipe.direction = .left
@@ -25,6 +37,24 @@ class MainTabBarController: UITabBarController {
         }
         if sender.direction == .right {
             self.selectedIndex -= 1
+        }
+    }
+    func refreshAllTasks(){
+        do{
+            tasks = try context.fetch(TaskItem.fetchRequest())
+            tasks = tasks.filter{$0.ruled == true}
+        }
+        catch{
+            
+        }
+        for task in tasks {
+            task.ruled = false
+        }
+        do{
+            try context.save()
+        }
+        catch{
+            
         }
     }
 }
