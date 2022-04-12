@@ -98,7 +98,7 @@ class TaskListViewController: UIViewController{
     }
     
 }
-extension TaskListViewController: UITableViewDelegate, UITableViewDataSource, AddTaskViewControllerDelegate{
+extension TaskListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -114,6 +114,8 @@ extension TaskListViewController: UITableViewDelegate, UITableViewDataSource, Ad
         deleteItem(item: tasks[indexPath.row])
         getAllItems(status: "unlisted")
     }
+}
+extension TaskListViewController: AddTaskViewControllerDelegate{
     func onSave() {
         getAllItems(status: "unlisted")
     }

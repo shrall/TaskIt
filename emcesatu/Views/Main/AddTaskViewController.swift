@@ -40,7 +40,7 @@ class AddTaskViewController: UIViewController {
         newTask.difficulty = selectedDiff
         newTask.deadlineBool = deadlineBool
         newTask.deadline = deadlinePicker.date
-        newTask.status = "finished"
+        newTask.status = "unlisted"
         newTask.createdAt = Date()
         newTask.ruled = false
         do{

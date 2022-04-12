@@ -14,9 +14,9 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskDifficultyLabel: UILabel!
     
     static let identifier = "taskCell"
-    let hardIcon = UIImage(systemName: "die.face.1")
-    let mediumIcon = UIImage(systemName: "die.face.3")
-    let easyIcon = UIImage(systemName: "die.face.5")
+    let hardIcon = UIImage(systemName: "1.square")
+    let mediumIcon = UIImage(systemName: "3.square")
+    let easyIcon = UIImage(systemName: "5.square")
     let hardColor = UIColor(red: 225/255, green: 29/255, blue: 72/255, alpha: 1)
     let mediumColor = UIColor(red: 251/255, green: 187/255, blue: 2/255, alpha: 1)
     let easyColor = UIColor(red: 16/255, green: 185/255, blue: 129/255, alpha: 1)
