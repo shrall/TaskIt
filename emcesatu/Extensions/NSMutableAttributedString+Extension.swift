@@ -13,11 +13,22 @@ extension NSMutableAttributedString {
     var fontSize:CGFloat { return 14 }
     var boldFont:UIFont { return  UIFont.boldSystemFont(ofSize: fontSize) }
     var normalFont:UIFont { return UIFont.systemFont(ofSize: fontSize)}
+    var italicFont:UIFont {return UIFont.italicSystemFont(ofSize: fontSize)}
     
     func bold(_ value:String) -> NSMutableAttributedString {
         
         let attributes:[NSAttributedString.Key : Any] = [
             .font : boldFont
+        ]
+        
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+    
+    func italic(_ value:String) -> NSMutableAttributedString {
+        
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font : italicFont
         ]
         
         self.append(NSAttributedString(string: value, attributes:attributes))

@@ -609,12 +609,45 @@
                                                 <real key="value" value="100"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="timerButtonClicked:" destination="rZZ-oC-9VE" eventType="touchUpInside" id="pOY-Bs-67j"/>
+                                        </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYY-zD-MJM">
+                                        <rect key="frame" x="105" y="371" width="172" height="43"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="tintColor" red="0.41568624970000001" green="0.38823530080000002" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Take a Break"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Take a Break">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="breakButtonClicked:" destination="rZZ-oC-9VE" eventType="touchUpInside" id="8rq-NC-YOv"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNW-7q-Zdt">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="430"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="64"/>
+                                        <color key="textColor" red="0.41568624970000001" green="0.38823530080000002" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mNW-7q-Zdt" secondAttribute="bottom" id="0K0-qi-HbH"/>
                                     <constraint firstItem="XbK-mP-KDD" firstAttribute="centerX" secondItem="wDp-1E-4hf" secondAttribute="centerX" id="2Ib-53-pgD"/>
+                                    <constraint firstItem="mNW-7q-Zdt" firstAttribute="top" secondItem="wDp-1E-4hf" secondAttribute="top" id="67N-uH-evs"/>
+                                    <constraint firstItem="mNW-7q-Zdt" firstAttribute="leading" secondItem="wDp-1E-4hf" secondAttribute="leading" id="91g-Wm-t9i"/>
+                                    <constraint firstItem="EYY-zD-MJM" firstAttribute="centerX" secondItem="mNW-7q-Zdt" secondAttribute="centerX" id="HIx-YO-enw"/>
+                                    <constraint firstAttribute="trailing" secondItem="mNW-7q-Zdt" secondAttribute="trailing" id="PJP-6s-UDc"/>
                                     <constraint firstItem="XbK-mP-KDD" firstAttribute="centerY" secondItem="wDp-1E-4hf" secondAttribute="centerY" id="Wxc-Ag-l0E"/>
+                                    <constraint firstAttribute="bottom" secondItem="EYY-zD-MJM" secondAttribute="bottom" constant="16" id="ez4-8F-IMS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -640,10 +673,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="breakButton" destination="EYY-zD-MJM" id="DNt-iP-avV"/>
                         <outlet property="finishButton" destination="uz2-ja-vn4" id="4kH-3R-alI"/>
+                        <outlet property="segmentedControl" destination="wsB-m0-XHs" id="W2g-sx-6EC"/>
                         <outlet property="segmentedDescription" destination="BvJ-rZ-bDJ" id="bPV-4P-KGJ"/>
                         <outlet property="taskDeadline" destination="oAe-dj-Ecu" id="z9R-wC-YhM"/>
+                        <outlet property="taskTimer" destination="mNW-7q-Zdt" id="RJH-0D-Pq0"/>
                         <outlet property="taskTitle" destination="W1R-Zo-nAW" id="lIh-Ps-RaL"/>
+                        <outlet property="timerButton" destination="XbK-mP-KDD" id="hDg-LZ-iD5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zsh-FN-i6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1019,11 +1056,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-Ge-f0p">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-Ge-f0p">
                                         <rect key="frame" x="0.0" y="29.5" width="382" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfw-Ng-OSP">
-                                                <rect key="frame" x="0.0" y="0.0" width="122" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="31"/>
                                                 <color key="tintColor" red="0.81176471709999998" green="0.2117646933" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Hard" imagePadding="4">
@@ -1042,7 +1079,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alC-ZA-wq2">
-                                                <rect key="frame" x="130" y="0.0" width="122" height="31"/>
+                                                <rect key="frame" x="127.5" y="0.0" width="127" height="31"/>
                                                 <color key="tintColor" red="0.89597839960000003" green="0.7513005358" blue="0.2622623945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="3.square" title="Medium" imagePadding="4"/>
@@ -1059,7 +1096,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AR-BZ-Ifg">
-                                                <rect key="frame" x="260" y="0.0" width="122" height="31"/>
+                                                <rect key="frame" x="254.5" y="0.0" width="127.5" height="31"/>
                                                 <color key="tintColor" red="0.33430117240000001" green="0.7177106714" blue="0.53053422979999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="5.square" title="Easy" imagePadding="4"/>
@@ -1079,8 +1116,6 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="2AR-BZ-Ifg" secondAttribute="trailing" id="QLw-42-uQ1"/>
                                             <constraint firstItem="Rfw-Ng-OSP" firstAttribute="leading" secondItem="UE6-Ge-f0p" secondAttribute="leading" id="TIV-R2-l8A"/>
-                                            <constraint firstItem="2AR-BZ-Ifg" firstAttribute="leading" secondItem="alC-ZA-wq2" secondAttribute="trailing" constant="8" symbolic="YES" id="XFc-Rp-LCz"/>
-                                            <constraint firstItem="alC-ZA-wq2" firstAttribute="leading" secondItem="Rfw-Ng-OSP" secondAttribute="trailing" constant="8" symbolic="YES" id="dDt-VW-ElU"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
